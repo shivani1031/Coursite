@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <!-- <link rel="icon" href="logo.png" type="image/png"> -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    
+  <title>Iha Trainings</title>
+  <link rel="icon" href="logo.png" type="image/png">
+
+<style>
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+}
+
+.margin{
+    margin: 0px 35px;
+    }
+    .about{
+    margin:auto;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    }
+
+    .about1{
+    margin:auto;
+    justify-content: center;
+    align-items: center;
+    
+    text-align: center;
+    }
+
+    .thumbnail img{
+    margin:auto;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    border:2px solid black;
+    }
+    
+
+.hero-image {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("dsa2.png");
+  height: 90%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.hero-text {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+
+.hero-text button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 10px 25px;
+  color: black;
+  background-color: #ddd;
+  text-align: center;
+  cursor: pointer;
+}
+
+.hero-text button:hover {
+  background-color: #555;
+  color: white;
+}
+
+.hero-text a{
+color:black;
+text-decoration: none;
+}
+
+.background { 
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("back1.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center; 
+  background-size: cover;
+  z-index:-1;
+  color: whitesmoke;
+}
+
+.btnn a{
+
+  color:whitesmoke;
+text-decoration: none;  
+}
+
+.open-button {
+  background-color: #555;
+  color: white;
+  padding: 1px 2px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed;
+  bottom: 23px;
+  right: 28px;
+  width: 80px;
+  border-radius: 5px;
+}
+
+/* The popup chat - hidden by default */
+.chat-popup {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 15px;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+}
+
+/* Add styles to the form container */
+.form-container {
+  max-width: 300px;
+  padding: 10px;
+  background-color: white;
+}
+
+/* Full-width textarea */
+.form-container textarea {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+  resize: none;
+  min-height: 200px;
+}
+
+/* When the textarea gets focus, do something */
+.form-container textarea:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit/send button */
+.form-container .btn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+  background-color: red;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+
+
+.blue{
+background-color: #0b557e;
+}
+
+.margin-topp
+{
+  margin-top: 15px;
+}
+
+</style>
+</head>
+<body>
+
+<!--top bar starts-->
+<div class="container margin-topp ">
+  <div class="row">
+    <div class="col-sm-12 col-md-12 col-lg-4 ">
+   
+      <div class="item-container d-flex align-items-center justify-content-center">
+      <img src="fullogo.png" alt=" ">
+    </div>
+    </div>
+    <!-- <div class="col-sm-12 col-md-6 col-lg-4 ">
+      <div class="item-container d-flex align-items-center justify-content-center ">
+        
+        <div class="image-container ">
+            <div class="lazy-load" data-src = "/uploads/data-science/signup_page_media/training_highlight_icons/learn_from_home.png"><i class="fa fa-mobile fa-3x" aria-hidden="true"></i></div>
+        </div>
+        <div class="content-container ">
+            <h6 class="title">Call us </h6>
+            <p class="description">Stay safe indoors</p>
+        </div>
+    </div>
+    </div> -->
+    <div class="col-sm-12 col-md-6 col-lg-4 ">
+      <div class="item-container d-flex align-items-center justify-content-center">
+        <div class="image-container">
+            <div class="lazy-load" data-src = "/uploads/data-science/signup_page_media/training_highlight_icons/learn_from_home.png"><i class="fa fa-mobile fa-3x" style="color:#0b557e" aria-hidden="true"></i></div>
+        </div>
+        <div class="content-container">
+          <br>
+            <h6 class="title"><b>&nbsp&nbspCall Us</b></h6>
+            <p class="description">&nbsp&nbsp+91-40-48538611</p>
+        </div>
+    </div>
+    </div>
+    <div class="col-sm-12 col-md-6 col-lg-4 ">
+      <div class="item-container d-flex align-items-center justify-content-center">
+        <div class="image-container">
+            <div class="lazy-load" data-src = "/uploads/data-science/signup_page_media/training_highlight_icons/learn_from_home.png">
+              <i class="fa fa-envelope-o fa-2x" style ="color:#0b557e" aria-hidden="true"></i></div>
+        </div>
+        <div class="content-container">
+          <br>
+            <h6 class="title"><strong>&nbsp&nbspEmail</strong></h6>
+            <p class="description">&nbsp&nbspinfo@ihaconsulting.in</p>
+        </div>
+    </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!--top bar ends-->
+
+    <!--navbar starts-->
+    <nav class="navbar navbar-expand-lg navbar-dark blue">
+        <div class="container-fluid ">
+         <!-- <a class="navbar-brand" href="https://www.ihaconsulting.in/index.php">
+            <img src="footer.png" alt="" width="auto" height="auto">
+          </a> -->
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mx-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="https://www.ihaconsulting.in/index.php"><span style ="color:white"><i class="fa fa-home fa-2x " aria-hidden="true"></i></span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="https://www.ihaconsulting.in/who-we-are.php">  <strong><span style ="color:white">ABOUT&nbspUS</span></strong> </a>
+              </li>
+			  <li class="nav-item">
+                <a class="nav-link" href="https://www.ihaconsulting.in/services.php">  <strong><span style ="color:white">SERVICES</span></strong> </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page"  href="#"> <strong><span style ="color:white">COURSES</span></strong> </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="https://www.ihaconsulting.in/internships"><strong><span style ="color:white">INTERNSHIPS</span></strong></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="https://www.ihaconsulting.in/ongoing.php"><strong><span style ="color:white">ONGOING</span></strong></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="https://www.ihaconsulting.in/our-associates.php"><strong><span style ="color:white">ASSOCIATES</span></strong></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="https://www.ihaconsulting.in/who-can-partner.php"><strong><span style ="color:white">WHO&nbspCAN&nbspPARTNER</span></strong></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="https://www.ihaconsulting.in/photo-gallery.php"><strong><span style ="color:white">GALLERY</span></strong></a>
+              </li>
+              <!-- <li class="nav-item">
+                <a class="nav-link" href="https://www.ihaconsulting.in/contact.php"><strong><span style ="color:white">CONTACT</span></strong></a>
+              </li> -->
+              <button type="button" class="btn btn-info "><a class="nav-link" href="form.php"><strong><span style="color:white">ENQUIRY</span></strong></a></button>
+        
+              <!--<button type="button" class="btn btn-primary m-1">Register</button>-->
+              <!-- <li class="nav-item">
+                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+              </li> -->
+            </ul>
+          </div>
+        </div>
+        </nav>
+        
+    <!--navbar ends-->
+
+  <!--hero starts-->
+<div class="hero-image">
+  <div class="hero-text">
+  <h1 style="font-size:35px">DATA SCIENCE ARCHITECT COURSE</h1>
+    <!--<p>And I'm a Photographer</p>-->
+    <button class="m-1"><a href ="https://forms.gle/Da1AddfRBcoFuqAf8">BOOK A DEMO CLASS</a></button>
+    <button ><a href= "https://forms.gle/SMrGQmHF59GW4A9X8">REGISTER</a></button>
+   
+  </div>
+</div>
+<!--hero ends-->
+
+<h1><center>DATA SCIENCE ARCHITECT COURSE</center></h1>
+<br>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 col-md-6 col-lg-6 ">
+      <h3><strong>Main Features</strong></h3>
+      <ul>
+        <h5>
+      <li>Python</li>
+      <li>Machine Learning</li>
+      <li>Deep Learning</li>
+      <li>Tableau</li>
+      </h5>
+      </ul>
+      <br>
+      <h3><strong>
+        Great Opportunity for:</strong></h3>
+          <ul>
+            <h5>
+          <li>Graduates and pursuing</li>
+          <li>Post-graduates and pursuing</li>
+          <li>Working professionals</li>
+        </h5>
+          </ul>
+    </div>
+    <div class="col-sm-12 col-md-6 col-lg-6 ">
+      <iframe width="400" height="315" src="Data science courses final (Iha_1080p.mp4" frameborder="0" allowfullscreen></iframe>
+    </iframe>
+    </div>
+  </div>
+</div>
+
+<br><br>
+
+<!-- <div class="container">
+    <div class="row">
+        <div class="col-6 col-lg-6">
+<h3><strong>Main Features</strong></h3>
+<ul>
+  <h5>
+<li>Python</li>
+<li>Machine Learning</li>
+<li>Deep Learning</li>
+<li>Tableau</li>
+</h5>
+</ul>
+</div>
+<div class="col-6 col-lg-6">
+<h3><strong>
+  Great Opportunity for:</strong></h3>
+    <ul>
+      <h5>
+    <li>Graduates and pursuing</li>
+    <li>Post-graduates and pursuing</li>
+    <li>Working professionals</li>
+  </h5>
+    </ul>
+</div>
+</div>
+</div> -->
+
+
+
+<section id="course-highlights-section" class="section background-alternate bg-light">
+  <div class="container py-5">
+          <h2 class="section-heading">Training Highlights</h2>
+      <div class="row mx-auto">
+                          <div class="col-12 col-lg-4">
+              <div class="item-container d-flex align-items-center">
+                  <div class="image-container">
+                      <div class="lazy-load" data-src = "/uploads/data-science/signup_page_media/training_highlight_icons/learn_from_home.png"><i class="fa fa-home fa-4x" aria-hidden="true"></i></div>
+                  </div>
+                  <div class="content-container">
+                      <h3 class="title">Learn from home</h3>
+                      <p class="description">Stay safe indoors</p>
+                  </div>
+              </div>
+          </div>
+                          <div class="col-12 col-lg-4">
+              <div class="item-container d-flex align-items-center">
+                  <div class="image-container">
+                      <div class="lazy-load" data-src = "/uploads/data-science/signup_page_media/training_highlight_icons/certificate_of_training.png"><i class="fa fa-id-card-o fa-3x" aria-hidden="true"></i></div>
+                  </div>
+                  <div class="content-container">
+                      <h3 class="title">Certificate of Training</h3>
+                      <p class="description"> From Iha Trainings</p>
+                  </div>
+              </div>
+          </div>
+          <div class="col-12 col-lg-4">
+            <div class="item-container d-flex align-items-center">
+                <div class="image-container">
+                    <div class="lazy-load" data-src = "/uploads/data-science/signup_page_media/training_highlight_icons/downloadable_content.png">
+                      <i class="fa fa-download fa-3x" aria-hidden="true"></i>
+                </div></div>
+                <div class="content-container">
+                    <h3 class="title">Downloadable content</h3>
+                    <p class="description">With lifetime access</p>
+                </div>
+            </div>
+        </div>
+                          <div class="col-12 col-lg-4">
+              <div class="item-container d-flex align-items-center">
+                  <div class="image-container">
+                      <div class="lazy-load" data-src = "/uploads/data-science/signup_page_media/training_highlight_icons/video_tutorials.png"><i class="fa fa-handshake-o fa-3x" aria-hidden="true"></i></div>                    </div>
+                  <div class="content-container">
+                      <h3 class="title">Live interaction</h3>
+                      <p class="description">Learn anytime, anywhere</p>
+                  </div>
+              </div>
+          </div>
+                          <div class="col-12 col-lg-4">
+              <div class="item-container d-flex align-items-center">
+                  <div class="image-container">
+                      <div class="lazy-load" data-src = "/uploads/data-science/signup_page_media/training_highlight_icons/projects.png"><i class="fa fa-tasks fa-3x" aria-hidden="true"></i></div>
+                  </div>
+                  <div class="content-container">
+                      <h3 class="title">Build live projects</h3>
+                      <p class="description">For hands-on practice</p>
+                  </div>
+              </div>
+          </div>
+                          <div class="col-12 col-lg-4">
+              <div class="item-container d-flex align-items-center">
+                  <div class="image-container">
+                      <div class="lazy-load" data-src = "/uploads/data-science/signup_page_media/training_highlight_icons/doubt_clearing.png"><i class="fa fa-ravelry fa-3x" aria-hidden="true"></i></div>
+                  </div>
+                  <div class="content-container">
+                      <h3 class="title">Doubt clearing</h3>
+                      <p class="description">Through Q&amp;A forum</p>
+                  </div>
+              </div>
+          </div>
+</div>
+  </div>
+  </section>
+
+
+  <section id="course-placement-assistance-section" class="section background background-alternate">
+    
+<br><br><br>
+    <div class="container py-5">
+<h2 class="section-heading">What placement assistance will you receive?</h2>
+<div class="row mx-auto ">
+                        <div class="col-12 col-xl-4">
+            <div class="item-container d-flex align-items-center">
+                <div class="image-container">
+                    <div class="lazy-load" data-src = "/uploads/data-science/signup_page_media/placement_assistance_icons/placement_assistance_1.png"></div>
+                </div>
+                <div class="content-container">
+                    <p class="description">Free <b>Placement Preparation Training</b></p>
+                </div>
+            </div>
+        </div>
+                        <div class="col-12 col-xl-4">
+            <div class="item-container d-flex align-items-center">
+                <div class="image-container">
+                    <div class="lazy-load" data-src = "/uploads/data-science/signup_page_media/placement_assistance_icons/placement_assistance_2.png"></div>
+                </div>
+                <div class="content-container">
+                    <p class="description">Access to <b>curated Internships & Jobs</b></p>
+                </div>
+            </div>
+        </div>
+                        <div class="col-12 col-xl-4">
+            <div class="item-container d-flex align-items-center">
+                <div class="image-container">
+                    <div class="lazy-load" data-src = "/uploads/data-science/signup_page_media/placement_assistance_icons/placement_assistance_3.png"></div>
+                </div>
+                <div class="content-container">
+                    <p class="description">Top performers will be <b>highlighted in their internship & job applications</b> on Iha</p>
+                </div>
+            </div>
+        </div>
+                </div>
+</div>
+<br><br>
+
+
+<!-- <section>
+  <div class="container about1">
+  <h2>ENROLL NOW!!</h2>
+  <p>As new batch starts on <h4>30<sup>th</sup> June 2021 </h4></p>
+  <div class="btnn">
+  <button type="button" class="btn btn-info"><a href= "#">REGISTER</a></button>
+  <button type="button" class="ml-1 btn btn-info"><a href= "https://forms.gle/Da1AddfRBcoFuqAf8">BOOK A DEMO CLASS</a></button>
+  </div>
+  </div>
+  </section> -->
+
+
+
+</section>
+
+
+
+<br><br>
+
+<section>
+<div class="container about1">
+<h2>ENROLL NOW!!</h2>
+<p>As new batch starts on <h4>30<sup>th</sup> June 2021 </h4></p>
+<div class="btnn">
+  <button type="button" class="m-1 btnn btn-info"><a href= "https://forms.gle/Da1AddfRBcoFuqAf8">BOOK A DEMO CLASS</a></button>
+
+  <button type="button" class=" btnn btn-info"><a href= "https://forms.gle/SMrGQmHF59GW4A9X8">REGISTER</a></button>
+
+  <a href="DSAC brochure.pdf" download="Brochure">
+    <button type="button" class="btnn ml-1 btn-info"><span style ="color:white"><i class="fa fa-download fa-x" aria-hidden="true"></i>&nbsp BROCHURE</span></button>
+   </a>
+  
+</div>
+</div>
+</section>
+
+<br>
+<!--FAQ's starts-->
+<section class="bg-light container">
+  <h2 class="about">FAQs for Data Science Architect Course</h2>
+  <div class="accordion margin" id="accordionExample">
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingTwo">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          Why is Data Science in demand?
+        </button>
+      </h2>
+      <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+          Data Science is not FUTURE anymore, It is PRESENT. The demand for Data Science
+  has increased threefold due to very fast technological advancements. Companies are
+  spending crores of Rupees in purchasing data, and so Understanding data and analysing
+  it becomes vital to any company’s success.
+        </div>
+      </div>
+    </div>
+    
+  <div class="accordion-item">
+      <h2 class="accordion-header" id="headingOne">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+          What is the work of a Data Scientist?
+        </button>
+      </h2>
+      <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+          The most prominent work of a Data Scientist include Gathering data, Finding
+          Insights, Building data models and Visualizations of Data.
+        </div>
+      </div>
+    </div>
+  
+  
+  
+  
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingfour">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsefour" aria-expanded="false" aria-controls="collapsefour">
+          I am from a non- technical background. How will this course benefit me?
+        </button>
+      </h2>
+      <div id="collapsefour" class="accordion-collapse collapse" aria-labelledby="headingfour" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+          The simple answer to this question would be that there are no prerequisites for this
+          course. In fact, we provide extra support to non- technical students. We believe that
+          every student enrolled has equal rights to be trained perfectly.
+        </div>
+      </div>
+    </div>
+  
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingfive">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsefive" aria-expanded="false" aria-controls="collapsefive">
+          Should I have good knowledge of programming to succeed at being a Data
+  Scientist?
+        </button>
+      </h2>
+      <div id="collapsefive" class="accordion-collapse collapse" aria-labelledby="headingfive" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+        Having good knowledge of programming may give you an edge but as said, there
+          are no prerequisites for this course. We train every student to be on equal platform.
+        </div>
+      </div>
+    </div>
+  
+  
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingsix">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsesix" aria-expanded="false" aria-controls="collapsesix">
+          Do I need an an extremely powerful Computer to work as a Data Scientist?
+        </button>
+      </h2>
+      <div id="collapsesix" class="accordion-collapse collapse" aria-labelledby="headingsix" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+          While you may need powerful computers for extreme deep learnings but in most of
+          the cases personal computers do the job right enough.
+        </div>
+      </div>
+    </div>
+  
+  
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingseven">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseseven" aria-expanded="false" aria-controls="collapseseven">
+          What are the Job profiles available in Data Science?
+        </button>
+      </h2>
+      <div id="collapseseven" class="accordion-collapse collapse" aria-labelledby="headingseven" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+          When you acquire the skills of Data Science you are open to profiles like:
+  Leader -> Entrepreneurship       </div>
+      </div>
+    </div>
+  
+  
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingeight">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseeight" aria-expanded="false" aria-controls="collapseeight">
+          Do I need to know Statistics well to land a good job in Data Scientist?
+        </button>
+      </h2>
+      <div id="collapseeight" class="accordion-collapse collapse" aria-labelledby="headingeight" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+          Yes, you need to know the basics of Statistics but you don’t need to be a Master of
+          Statistics. We provide 360 degree support to ensure that every student’s basics are
+          clear. We also suggest topics for you to have hand on practice. Also using language
+          Python won’t require much knowledge of Statistics for being a Data Scientist
+        </div>
+      </div>
+    </div>
+  
+  
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingThree">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          What are the most important skills to be a Data Scientist?
+        </button>
+      </h2>
+      <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+          Skills that are important to be Data Scientist would include Statistics, Visualization,
+          Analytics and language Python.
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <br>
+  </section>
+<!--FAQ's ends-->
+  <!--footer starts-->
+  
+  <section style="background-color:#595959">
+      <div class="container">
+       <div class="row">
+         <div class="col-sm">
+           <h4 style="color:white">ABOUT</h4>
+         <p style="color:#f2f2f2">We strive to deliver a level of service that exceeds the expectations of our customers.</p>
+         <p style="color:#e6e6e6">If you have any questions about our products or services, please do not hesitate to contact us. We have friendly, knowledgeable representatives available seven days a week to assist you.</p>
+         </div>
+         <div class="col-sm">
+           <p><a href="#"><img style="margin-top:10px; border: 5px solid black" src="footer.png" class="rounded mx-auto d-block" width="350vh" height="150vh" alt="com.jpg"></a></p>
+         <h4 style="color:#e6e6e6">MAILING LIST</h4>
+         <p style="color:#f2f2f2">Subscribe to our mailing list for offers, news updates and more!</p>
+         Email ID:
+     <input type="mail" name="email id"><br>
+     <a href="#" class="badge badge-secondary" style="font-size:20px;margin:5px">SUBSCRIBE</a>
+         </div>
+         <div class="col-sm">
+           <h5 style="color:#f2f2f2">CONTACT</h5>
+     
+     <span style="color:#f2f2f2">
+      1-8-450/A9, Ground Floor,<br> Indian Airlines Colony, Patigadda, Begumpet, <br>
+       Hyderabad, Telangana 500016 <br><br>
+     Phone: +91-40-48538611<br>
+     
+     Email: courses@ihaconsulting.in<BR><BR>
+      <a href="https://www.instagram.com/p/CP3EeZKl8Ev/?utm_medium=copy_link"><i class="fa fa-instagram" style="color:#f2f2f2;" aria-hidden="true"></i></a>
+      <a href="https://api.whatsapp.com/send?phone=919329795187text=welcome%20 "><i class="fa fa-whatsapp" style="color:#f2f2f2;" aria-hidden="true"></i></a>
+ 
+      <a href="https://www.quora.com/profile/IHA-CONSULTING-GROUP "><i class="fa fa-quora" style="color:#f2f2f2;" aria-hidden="true"></i></a>
+      <a href=" https://www.linkedin.com/feed/update/urn:li:activity:6807568088318447616 "><i class="fa fa-linkedin" style="color:#f2f2f2;" aria-hidden="true"></i></a>
+      <!-- <a href=" "><i class="fa fa-facebook" style="color:#f2f2f2;" aria-hidden="true"></i></a> -->
+    </span> 
+     <!--<i class="fa-3x fa fa-desktop" aria-hidden="true"></i>-->
+     
+         </div>
+       </div>
+     </div>
+     <hr width="100%"></hr>
+     <p style="color:#f2f2f2;text-align:center">Copyright &copy; 2021 ihaconsulting.in - All rights reserved</p>
+     </section>
+     
+    
+    <!--footer ends-->
+
+
+    <button class="open-button" onclick="openForm()"><i class="fa fa-comments-o fa-3x" aria-hidden="true"></i></button>
+
+    <div class="chat-popup" id="myForm">
+      <form action="message.php" class="form-container" method ="post">
+        <h1>Chat</h1>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email address</label>
+          <input type="email" class="form-control" id="email" name = "email" placeholder="name@example.com" required>
+        </div>
+        <div class="mb-3">
+          <label for="desc" class="form-label">Enter your Message</label>
+          <textarea class="form-control" id="desc" name ="desc" rows="3" placeholder ="Message... " required></textarea>
+        </div>
+        <button type="submit" class="btn">Send</button>
+        <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+      </form>
+    </div>
+
+    
+    <script>
+      function openForm() {
+        document.getElementById("myForm").style.display = "block";
+      }
+      
+      function closeForm() {
+        document.getElementById("myForm").style.display = "none";
+      }
+
+      
+      </script>
+      
+
+<!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
+    -->
+</body>
+</html>
